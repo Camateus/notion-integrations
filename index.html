@@ -10,15 +10,15 @@
   </style>
 </head>
 <body>
-  <h1>Contagem Regressiva - Alemanha</h1>
+  <h1>Contagem Regressiva para 01/10/2024</h1>
   <div id="timer"></div>
 
   <script>
     // Definir a data e hora de destino
     const destino = new Date("2024-10-01T00:00:00");
 
-    // Atualizar o cronômetro a cada segundo
-    setInterval(() => {
+    // Atualizar o cronômetro em tempo real
+    const atualizarCronometro = () => {
       // Obter a data e hora atuais
       const agora = new Date();
 
@@ -32,8 +32,11 @@
       const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
       // Formatar e exibir o cronômetro
-      document.getElementById("timer").innerHTML = `${dias} dias e ${horas}:${minutos}:${segundos}`;
-    }, 1000);
+      document.getElementById("timer").innerHTML = `${dias} dias e ${horas} : ${minutos} : ${segundos} `;
+    };
+
+    // Chamar a função de atualização do cronômetro a cada segundo
+    setInterval(atualizarCronometro, 1000);
   </script>
 </body>
 </html>
