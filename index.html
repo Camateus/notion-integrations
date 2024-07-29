@@ -2,9 +2,15 @@
 <html>
 <head>
   <title>Cronômetro de Contagem Regressiva</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <h1>Contagem Regressiva para 01/10/2024</h1>
+  <h1>Contagem Regressiva - Alemanha</h1>
   <div id="timer"></div>
 
   <script>
@@ -19,13 +25,14 @@
       // Calcular a diferença entre a data de destino e a data atual
       const diferenca = destino - agora;
 
-      // Converter a diferença em dias, horas e minutos
+      // Converter a diferença em dias, horas, minutos e segundos
       const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
       const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
       // Formatar e exibir o cronômetro
-      document.getElementById("timer").innerHTML = `${dias} dias, ${horas} horas e ${minutos} minutos`;
+      document.getElementById("timer").innerHTML = `${dias} dias e ${horas}:${minutos}:${segundos}`;
     }, 1000);
   </script>
 </body>
